@@ -1,0 +1,13 @@
+.fraction-area,
+.rectangle-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.fraction-area > big,
+.rectangle-area > big {
+  font-size: x-large;
+}
