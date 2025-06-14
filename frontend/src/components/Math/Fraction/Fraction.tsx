@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { FractionType } from "../../types";
+import type { FractionType } from "../../../types";
 
 import "./styles.css";
 

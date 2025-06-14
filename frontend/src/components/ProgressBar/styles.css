@@ -1,0 +1,50 @@
+@import url("../../styles/variables.css");
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 400px;
+  height: 48px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 12px 18px;
+}
+
+.progress-container > button {
+  background-color: rgba(128, 128, 128, 0.15);
+  font-size: x-large;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.progress-container > button:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+
+.bar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: large;
+}
+
+.bar-area > .bar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.bar-area > .bar > .progress {
+  background-color: var(--color-primary);
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}

@@ -1,6 +1,6 @@
-import { Box, Rectangle, StaticFraction } from "../";
-import { createRectangle, simplifyFraction } from "../../functions";
-import type { FractionType } from "../../types";
+import { Box, Rectangle, StaticFraction } from "../..";
+import { createRectangle, simplifyFraction } from "../../../functions";
+import type { FractionType } from "../../../types";
 
 import "./styles.css";
 
@@ -16,7 +16,7 @@ export const SimplifyFraction = ({
   const simplifiedFraction = simplifyFraction(fraction);
   const divisor = fraction.numerator / simplifiedFraction.numerator;
 
-  const rectangle = createRectangle(fraction.denominator);
+  const rectangle = createRectangle(simplifiedFraction.denominator);
 
   return (
     <Box number={number}>

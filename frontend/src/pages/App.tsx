@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Box,
@@ -11,6 +11,7 @@ import {
   EqualizeBases,
   SimplifyFraction,
   SecondOperation,
+  ProgressBar,
 } from "../components";
 import { operation, validateFraction } from "../functions";
 import type { FractionType, OperatorType } from "../types";
@@ -37,13 +38,18 @@ function App() {
     denominator: 1,
   });
 
+  const [progress, setProgress] = useState(1);
+
   function resetFields() {
     setF1({ numerator: 1, denominator: 1 });
     setF2({ numerator: 1, denominator: 1 });
+    setFirstResult({ numerator: 1, denominator: 1 });
     setOperator("+");
 
     setChosenFraction([]);
     setChosenOperator("+");
+
+    setProgress(1);
   }
 
   function chooseCalc() {
@@ -68,10 +74,34 @@ function App() {
     const result = operation([f1, f2], operator);
 
     setError("");
+    setFirstResult(result);
     setChosenFraction([f1, f2]);
     setChosenOperator(operator);
-    setFirstResult(result);
   }
+
+  function showBox() {
+    const main = document.querySelector("main");
+
+    if (main) {
+      main.childNodes.forEach((child) => {
+        if (child instanceof HTMLElement && child.id.startsWith("box")) {
+          console.log(child.id);
+          child.classList.add("hidden");
+        }
+      });
+
+      main.childNodes.forEach((child) => {
+        if (
+          child instanceof HTMLElement &&
+          child.id.endsWith(progress.toString())
+        ) {
+          child.classList.remove("hidden");
+        }
+      });
+    }
+  }
+
+  useEffect(showBox, [progress, chosenFraction]);
 
   return (
     <>
@@ -109,22 +139,33 @@ function App() {
         )}
 
         {chosenFraction.length > 0 &&
-        (chosenOperator === "+" || chosenOperator === "-") ? (
-          <>
-            <EqualizeBases
-              chosenFraction={chosenFraction}
-              chosenOperator={chosenOperator}
-            />
-            <FirstOperation fraction={firstResult} />
-          </>
-        ) : (
-          <SecondOperation fraction={firstResult} operator={chosenOperator} />
-        )}
+          (chosenOperator === "+" || chosenOperator === "-") && (
+            <>
+              <EqualizeBases
+                chosenFraction={chosenFraction}
+                chosenOperator={chosenOperator}
+              />
+              <FirstOperation fraction={firstResult} />
+            </>
+          )}
+
+        {chosenFraction.length > 0 &&
+          (chosenOperator === "x" || chosenOperator === "/") && (
+            <SecondOperation fraction={firstResult} operator={chosenOperator} />
+          )}
 
         {chosenFraction.length > 0 && (
           <SimplifyFraction
             fraction={firstResult}
             number={chosenOperator === "+" || chosenOperator === "-" ? 5 : 4}
+          />
+        )}
+
+        {chosenFraction.length > 0 && (
+          <ProgressBar
+            progress={progress}
+            setProgress={setProgress}
+            max={chosenOperator === "+" || chosenOperator === "-" ? 5 : 4}
           />
         )}
       </main>

@@ -1,6 +1,6 @@
-import { Box, Rectangle, StaticFraction } from "../";
-import { createRectangle } from "../../functions";
-import type { FractionType, OperatorType } from "../../types";
+import { Box, Rectangle, StaticFraction } from "../..";
+import { createRectangle } from "../../../functions";
+import type { FractionType, OperatorType } from "../../../types";
 
 import "./styles.css";
 

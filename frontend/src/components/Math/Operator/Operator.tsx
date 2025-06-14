@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { OperatorType } from "../../types";
+import type { OperatorType } from "../../../types";
 
 import "./styles.css";
 
