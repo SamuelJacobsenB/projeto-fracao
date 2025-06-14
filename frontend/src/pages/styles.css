@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  padding: 10px;
+}
+
+.fraction-area {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+}

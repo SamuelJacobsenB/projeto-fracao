@@ -1,0 +1,38 @@
+.fraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numerator,
+.denominator {
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  padding: 8px 2px;
+  border: 2px solid transparent;
+}
+
+.numerator:hover,
+.denominator:hover,
+.numerator:focus,
+.denominator:focus {
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.153);
+  border-radius: 4px;
+}
+
+.separator {
+  background-color: black;
+  width: 100%;
+  height: 2px;
+}

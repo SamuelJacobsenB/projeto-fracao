@@ -2,9 +2,9 @@ nav {
   display: flex;
   align-items: center;
   background-color: white;
-  padding: 8px 12px;
+  padding: 10px 12px;
 }
 
 nav > h1 {
-  font-size: larger;
+  font-size: x-large;
 }
