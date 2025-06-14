@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+  color: white;
+  font-size: medium;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.error > button {
+  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  height: 100%;
+  cursor: pointer;
+}

@@ -1,23 +1,39 @@
 main {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  gap: 10px;
+  gap: 24px;
   width: 100%;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
+  margin-top: 20px;
   padding: 10px;
 }
 
 .fraction-area {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 18px;
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
+.btn-area {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-reset,
+.btn-calculate {
+  width: 100%;
+  color: white;
+}
+
+.btn-reset {
+  background-color: red;
+}
+
+.btn-calculate {
+  background-color: var(--color-primary);
 }

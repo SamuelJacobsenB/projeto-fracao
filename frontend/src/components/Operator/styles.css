@@ -1,0 +1,17 @@
+.operator > select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  direction: rtl;
+  font-size: x-large;
+  text-align: center;
+  width: fit-content;
+  padding: 4px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.084);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.operator > select:hover {
+  background-color: rgba(0, 0, 0, 0.103);
+}

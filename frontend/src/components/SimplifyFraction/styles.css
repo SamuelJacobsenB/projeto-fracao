@@ -1,0 +1,24 @@
+.result-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.result-area > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.result-area > div.result {
+  display: flex;
+  gap: 14px;
+}
+
+.result-area > big {
+  font-size: x-large;
+}

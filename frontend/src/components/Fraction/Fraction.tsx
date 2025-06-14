@@ -10,29 +10,17 @@ interface FractionProps {
 }
 
 export const Fraction = ({ fraction, setFraction }: FractionProps) => {
-  function verifyNumerator(numerator: number): boolean {
-    return numerator >= 0 && numerator <= 16;
-  }
-
-  function verifyDenominator(denominator: number): boolean {
-    return denominator >= 1 && denominator <= 16;
-  }
-
   return (
     <div className="fraction">
       <input
         type="number"
         value={fraction.numerator}
-        onChange={(e) => {
-          const numerator = Number(e.target.value);
-
+        onChange={(evt) =>
           setFraction({
             ...fraction,
-            numerator: verifyNumerator(numerator)
-              ? numerator
-              : fraction.numerator,
-          });
-        }}
+            numerator: Number(evt.target.value),
+          })
+        }
         max={16}
         min={0}
         className="numerator"
@@ -41,18 +29,14 @@ export const Fraction = ({ fraction, setFraction }: FractionProps) => {
       <input
         type="number"
         value={fraction.denominator}
-        onChange={(e) => {
-          const denominator = Number(e.target.value);
-
+        onChange={(evt) =>
           setFraction({
             ...fraction,
-            denominator: verifyDenominator(denominator)
-              ? denominator
-              : fraction.denominator,
-          });
-        }}
+            denominator: Number(evt.target.value),
+          })
+        }
         max={16}
-        min={1}
+        min={0}
         className="denominator"
       />
     </div>
