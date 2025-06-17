@@ -1,14 +1,21 @@
-.fraction {
+.static-fraction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.static-fraction big {
+  font-size: large;
+  font-weight: bold;
+}
+
+.static-fraction-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
   width: 50px;
-}
-
-.fraction > big {
-  font-size: large;
-  font-weight: bold;
 }
 
 .separator {

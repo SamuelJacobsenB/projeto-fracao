@@ -11,3 +11,7 @@
 .rectangle-area > big {
   font-size: x-large;
 }
+
+.fraction-container {
+  flex-direction: column;
+}

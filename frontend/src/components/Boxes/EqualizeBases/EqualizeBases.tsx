@@ -36,18 +36,24 @@ export const EqualizeBases = ({
     <Box number={3}>
       <h1>Igualar Bases</h1>
       <p>
-        Para realizar operações com frações, é necessário que elas tenham o
-        mesmo denominador (se ainda não tiverem).
+        Para realizar operações com frações, é fundamental que elas tenham o
+        mesmo denominador. Caso não tenham, precisamos ajustá-las para que
+        possam ser comparadas ou calculadas corretamente.
       </p>
       <p>
-        Portanto, podemos multiplicar as bases (denominadores) entre si, e
-        multiplicar os numeradores pelo denominador da outra fração, para que as
-        frações fiquem com o mesmo denominador.
+        Para isso, multiplicamos os denominadores entre si, garantindo que todas
+        as frações compartilhem uma base comum. Em seguida, ajustamos os
+        numeradores, multiplicando cada um pelo denominador da outra fração,
+        preservando assim o valor original das frações, mas permitindo operações
+        como soma e subtração.
       </p>
       <p>
-        Como {chosenFraction[0].denominator} x {chosenFraction[1].denominator} ={" "}
-        {chosenFraction[0].denominator * chosenFraction[1].denominator}, então
-        temos:
+        Como{" "}
+        <strong>
+          {chosenFraction[0].denominator} x {chosenFraction[1].denominator} ={" "}
+          {chosenFraction[0].denominator * chosenFraction[1].denominator}
+        </strong>
+        , então temos:
       </p>
       <div className="rectangle-area">
         <Rectangle

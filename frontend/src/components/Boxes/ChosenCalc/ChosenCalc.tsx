@@ -23,7 +23,7 @@ export const ChosenCalc = ({
   return (
     <Box number={2}>
       <h1>Cálculo escolhido</h1>
-      <p>Representação das frações em repartições:</p>
+      <p>Representação das frações:</p>
       <div className="rectangle-area">
         <Rectangle
           width={r1.width}

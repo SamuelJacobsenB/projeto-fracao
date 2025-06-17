@@ -22,22 +22,26 @@ export const SimplifyFraction = ({
     <Box number={number}>
       <h1>Simplificando a fração</h1>
       <p>
-        Agora devemos tentar simplicar a fração, para que seja mias fácil de
-        visualização.
+        Para facilitar a compreensão, vamos tentar simplificar a fração,
+        tornando sua visualização mais intuitiva.
       </p>
       <p>
-        Para isso devemos tentar achar o maior número que divida tanto o
-        numerador quanto o denominador.
+        A simplificação de frações consiste em encontrar o maior número que
+        possa dividir tanto o numerador quanto o denominador sem deixar resto,
+        reduzindo assim a fração para sua forma mais simples.
       </p>
       {divisor > 1 ? (
         <p>
-          Temos como maior divisor o numero {divisor}, pois tanto o numerado
-          quanto o numerador podem ser divididos por ele:
+          O maior divisor comum entre o numerador e o denominador é{" "}
+          <strong>{divisor}</strong>. Isso significa que podemos dividir ambos
+          por esse número, tornando a fração mais simples e fácil de
+          interpretar.
         </p>
       ) : (
         <p>
-          Como não há nenhum divisor em comum entre o numerador e o denominador,
-          o resultado é a própria fração:
+          Não há nenhum divisor comum além de 1 entre o numerador e o
+          denominador, o que indica que a fração já está na sua forma mais
+          simplificada.
         </p>
       )}
       <div className="result-area">
@@ -56,7 +60,7 @@ export const SimplifyFraction = ({
           <Rectangle
             width={rectangle.width}
             height={rectangle.height}
-            numerator={fraction.numerator}
+            numerator={simplifiedFraction.numerator}
           />
         </div>
       </div>

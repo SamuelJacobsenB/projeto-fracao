@@ -7,37 +7,50 @@ interface RectangleProps {
 }
 
 export const Rectangle = ({ width, height, numerator }: RectangleProps) => {
-  let num = numerator + 1;
+  const isNegative = numerator < 0;
 
-  const numberOfRectangles = Math.ceil(numerator / (width * height)) || 1;
+  let num = Math.abs(numerator);
+
+  const numberOfRectangles = Math.max(
+    1,
+    Math.ceil(Math.abs(numerator) / (width * height))
+  );
 
   return (
     <div className="rectangle-container">
-      {numberOfRectangles > 0 &&
-        Array.from({ length: numberOfRectangles }, (_, i) => (
+      {Array.from({ length: numberOfRectangles }, (_, i) => {
+        return (
           <div
             className="rectangle"
             key={i}
             style={{
+              display: "grid",
               gridTemplateColumns: `repeat(${width}, 1fr)`,
               gridTemplateRows: `repeat(${height}, 1fr)`,
             }}
           >
-            {Array.from({ length: width * height }, (_, i) => {
+            {Array.from({ length: width * height }, (_, j) => {
               num -= 1;
 
               return (
                 <div
-                  key={i}
+                  key={j}
                   className="rectangle-item"
                   style={{
-                    backgroundColor: num > 0 ? "#0d43b0" : "lightgray",
+                    backgroundColor: !isNegative
+                      ? num >= 0
+                        ? "#0d43b0"
+                        : "lightgray"
+                      : num >= 0
+                      ? "red"
+                      : "lightgray",
                   }}
                 />
               );
             })}
           </div>
-        ))}
+        );
+      })}
     </div>
   );
 };

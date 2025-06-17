@@ -85,7 +85,6 @@ function App() {
     if (main) {
       main.childNodes.forEach((child) => {
         if (child instanceof HTMLElement && child.id.startsWith("box")) {
-          console.log(child.id);
           child.classList.add("hidden");
         }
       });

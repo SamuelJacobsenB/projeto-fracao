@@ -21,21 +21,21 @@ export const SecondOperation = ({
       {operator === "x" ? (
         <>
           <p>
-            Para realizarmos a multiplicação, devemos multiplicar o numerador
-            das 2 frações entre si, e logo em seguida o denominador das 2
-            frações entre si.
+            Para realizar a multiplicação de frações, multiplicamos os
+            numeradores entre si, obtendo o novo numerador. Em seguida,
+            multiplicamos os denominadores entre si, obtendo o novo denominador.
           </p>
-          <p>Obtemos assim:</p>
+          <p>Assim, chegamos ao seguinte resultado:</p>
         </>
       ) : (
         <>
           <p>
-            Para realizarmos a divisão, devemos multiplicar o numerador da
-            primeira fração pelo denominador da segunda fração, e logo em
-            seguida o denominador da primeira fração pelo numerador da segunda
-            fração.
+            Para realizar a divisão de frações, utilizamos a regra do produto
+            cruzado: multiplicamos o numerador da primeira fração pelo
+            denominador da segunda, e o denominador da primeira fração pelo
+            numerador da segunda.
           </p>
-          <p>Obtemos assim:</p>
+          <p>Assim, chegamos ao seguinte resultado:</p>
         </>
       )}
       <div className="result-area">
